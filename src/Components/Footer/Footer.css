@@ -1,0 +1,101 @@
+/* Base Footer Styles */
+.footer {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+  
+  body[data-theme='dark'] .footer {
+    background-color: black; /* Dark background for dark mode */
+    color: rgb(188, 185, 185); /* Light gray text for dark mode */
+  }
+  
+  body[data-theme='dark'] .footer .social-icon {
+    color: rgb(188, 185, 185); /* Gray color for icons in dark mode */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  
+  .footer-section p, .footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footer-section ul {
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-section ul li a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  .social-icon {
+    font-size: 20px;
+  }
+  
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Light Mode Styles */
+  .footer .social-icons {
+    background-color: transparent; /* No background for social icons in light mode */
+  }
+  
+  .footer .social-icons .social-icon {
+    color: black; /* White color for social icons in light mode */
+  }
+  
+  /* Dark Mode Styles */
+  body[data-theme='dark'] .social-icons {
+    background-color: black; /* Dark background for social icons */
+  }
+  
+  body[data-theme='dark'] .social-icons .social-icon {
+    color: rgb(188, 185, 185); /* Gray color for social icons in dark mode */
+  }
+  
+  .footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer.dark-mode {
+    background-color: var(--background-color); /* Ensure dark mode styles are consistent */
+    color: var(--text-color);
+  }
+  

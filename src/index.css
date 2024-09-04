@@ -1,0 +1,39 @@
+/* Index.css */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --navbar-bg: black;
+  --navbar-text: white;
+  --link-color: white;
+  --icon-size: 20px;
+  --underline-color: #007bff;
+}
+
+/* Dark mode */
+.dark-mode {
+  --background-color: black;
+  --text-color: white;
+  --navbar-bg: #333;
+  --navbar-text: #fff;
+  --link-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+}
+
+.navbar a {
+  color: var(--link-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}

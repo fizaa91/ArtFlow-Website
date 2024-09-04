@@ -1,0 +1,198 @@
+/* Navbar CSS */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px; 
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+    padding: 0 20px; 
+    margin: 20px auto 0;
+    width: 90%; 
+    max-width: 1200px; 
+    border-radius: 10px; 
+    position: fixed; /* Fixed for mobile screens */
+    top: 0; /* Ensure it's at the top */
+    left: 0;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.navbar-logo {
+    margin-left: 10px; 
+    cursor: pointer;
+    flex: 1; /* To push other items to the right */
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 2; /* Adjust as needed */
+    z-index: 1000; /* Ensure dropdown is above other content */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li {
+    list-style: none;
+    position: relative; 
+}
+
+.navbar-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    position: relative; 
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    margin-left: 8px;
+}
+
+.navbar-icons {
+    display: flex;
+    gap: 16px;
+    font-size: var(--icon-size);
+    margin-left: auto; /* Pushes icons to the far right */
+}
+
+.navbar-icons .icon {
+    color: var(--navbar-text);
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--navbar-bg);
+    border-radius: 5px;
+    padding: 10px 0;
+    list-style: none;
+    width: 150px;
+    z-index: 1000; /* Ensure dropdown is above other content */
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    color: var(--navbar-text);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dropdown-menu a:hover {
+    background-color: gray;
+    color: var(--navbar-bg);
+}
+
+.collection:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: var(--underline-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-hamburger {
+    display: none;
+    font-size: var(--icon-size);
+    color: var(--navbar-text);
+    cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed; /* Keep fixed on mobile screens */
+        top: -2%;
+        left: 0;
+        z-index: 1000;
+      
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        right: 0;
+        background-color: var(--navbar-bg);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-hamburger {
+        display: block;
+    }
+
+    .navbar-icons {
+        display: flex;
+        gap: 16px;
+        font-size: var(--icon-size);
+        margin-left: auto;
+        margin-right: 10px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 769px) {
+    .navbar {
+        position: relative; /* Reset position for large screens */
+        margin: 20px auto 0;
+        width: 90%;
+        max-width: 1200px;
+        top: auto; /* Reset top for large screens */
+    }
+
+    .navbar-menu {
+        display: flex; /* Ensure menu is visible on large screens */
+    }
+
+    .navbar-menu.open {
+        display: none; /* Keep menu hidden when not open */
+    }
+
+    .navbar-hamburger {
+        display: none; /* Hide hamburger icon on large screens */
+    }
+}

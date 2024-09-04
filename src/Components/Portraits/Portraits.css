@@ -1,0 +1,202 @@
+/* Default (light mode) */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --navbar-bg: black;
+    --navbar-text: white;
+    --link-color: white;
+    --icon-size: 20px;
+    --underline-color: #007bff;
+  }
+  
+  /* Dark mode */
+  [data-theme='dark'] {
+    --background-color: black;
+    --text-color: gray; /* Updated text color for dark mode */
+    --navbar-bg: #333;
+    --navbar-text: #fff;
+    --link-color: white;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar {
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+  }
+  
+  .navbar a {
+    color: var(--link-color);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Styling for the gallery grid */
+  .portraits-gallery {
+    padding: 20px;
+    text-align: center; /* Center align heading */
+  }
+  
+  .gallery-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Styling for each card */
+  .card {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    animation: fadeUp 1s ease-in-out; /* Added fade-up animation */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .card-info {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .photographer-name {
+    font-weight: bold; /* Bold photographer name */
+  }
+  
+  .add-to-cart {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--underline-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #0056b3; /* Darker color on hover */
+  }
+  
+  /* Modal styling for enlarged image */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure modal is above other content */
+  }
+  
+  .modal-content {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Added for positioning the close button */
+    animation: fadeUp 1s ease-in-out; /* Added fade-up animation */
+  }
+  
+  .modal-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+  }
+  
+  .modal-info {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--text-color);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--underline-color);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .close-button:hover {
+    background: darkred; /* Change this color as needed */
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive design for mobile screens */
+  @media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two images per row on mobile */
+    }
+    .modal {
+      margin-bottom: 25%;
+    }
+    .modal-info {
+      text-align: center;
+      margin-top: 10px;
+      color: var(--text-color);
+    }
+    .portraits-gallery {
+        margin-top: 10%;
+      }
+  }
+  
